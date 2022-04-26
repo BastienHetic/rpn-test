@@ -74,5 +74,9 @@ test('3, 5, +, 2, / => -1', () => {
 })
 
 test('1, 1, -, 2, / => Cannot divide by 0', () => {
-  expect(rpn(1, 1, '-', 2, '/')).toThrow('Cannot divide by 0')
+  let divideByZero = () => {
+    rpn(1, 1, '-', 2, '/');
+  }
+
+  expect(divideByZero).toThrow('Cannot divide by 0')
 })
